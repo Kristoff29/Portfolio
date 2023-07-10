@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Reservation</title>
+<script type="text/javascript">
+	x= confirm("Do you want to reserve a room?")
+	if(x){
+		alert("Then proceed")
+	}
+	else{
+		alert("Still proceed.")
+	}
+</script>
+<style type ="text/css">
+	h1{
+		color:#B8860B;
+	}
+		a {
+				text-decoration: none;
+				color: white;
+				padding: 10px 50px;
+				transition: 0.6s ease;
+				font-size: 125%;
+			}
+			a:hover{
+				background-color: gray;
+				color: white;
+			}
+		nav:hover{
+			background-color:  #302F2F;
+
+		}
+input[type=email], select{
+			border: 0px;
+			width: 100%;
+			height: 36px;
+			outline: none;
+			font-size: 15px;
+			}
+	button{
+				border: 0px;
+				background: #F6A600;
+				color: white;
+				width: 100%;
+				cursor: pointer;
+				height:39px;
+				outline: none;	
+				transition: 1s ease;
+			}
+			button:hover{
+				background-color: black;
+				color: white;
+				border: 0px;
+				border-radius: 4px;
+			}
+	label {
+   display: block;
+   float: left;
+   clear: left;
+   margin: 5px;
+   width: 250px;
+   font-size: 140%;
+   color: #F4F4F4;
+}
+
+input, select, textarea {
+   display: block;
+   float: left;
+   margin: 5px 0px;
+   width: 195px;
+   height: 30px;
+}
+
+input[type='submit'] {
+   background-color: gray;
+   border-radius: 5px;
+   color: white;
+   float: none;
+   display: inline;
+   font-size: 1.1em;
+   height: 40px;
+   width: 180%;
+   margin-left: 0;
+   transition: 1s ease;
+}
+input[type='submit']:hover{
+				background-color: black;
+				color: white;
+				border: 0px;
+				border-radius: 4px;
+			}
+	#social_wrapper {
+		overflow: hidden;
+	}
+	#pool_wrapper {
+		overflow: hidden;
+	}
+	#bedroom_wrapper{
+		overflow: hidden;
+	}
+	#hover_social {
+		transition: 1s ease;
+	}
+	#hover_social:hover{
+		transform: scale(1.2);
+	}
+	#hover_pool{
+		transition: 1s ease;
+	}
+	#hover_pool:hover{
+		transform: scale(1.2);
+	}
+	#hover_bedroom{
+		transition: 1s ease;
+	}
+	#hover_bedroom:hover{
+		transform: scale(1.2);
+	}
+</style>
+</head>
+<body>
+	<section style="background-image: url(reserve2.jpg); height: 425px; width: 100%;background-size: 100% 100%; background-attachment: fixed; padding-bottom: 0%;">
+		<center><nav style="background-color: none;height: 125px;width: 100%;background-size: 100% 100%;background-attachment: scroll; padding: 0; position: sticky; top: 0; text-align: center; z-index: 100000000; display: flex; align-items: center; justify-content: center; transition: 0.6s ease;">
+			<a href="Hotel.html">Home</a>
+		 	<a href="Specials.html">Specials&nbsp;</a>
+		 	<a href="Services.html">Hotel Services</a>
+		  <div id="logo"><img src="nirvana_final.png" style="height: 100px;"></div>
+		  	<a href="Meetings.html">Meetings & Events</a>
+		 	<a href="">FAQS</a>
+		 		<a href="About_Us.html">About Us</a>
+		 </nav></center>
+		 <br><br>
+		 	<h1 style="color: white; font-size: 360%; text-align: center;">Reservation</h1>
+		 </section>
+		 <section style="background-image: url(reserve1.jpg); height: 1000px; width: 100%;background-size: 100% 100%; background-attachment: fixed; padding-bottom: -5%; margin-top: 0%; margin-bottom: 0%;">
+		<br><br>
+		<h1 style="color: white; font-size: 300%; text-align: center;">Hotel Booking</h1>
+		<center>
+		<form id="survey" action="Hotel.html" method="POST">
+		<table style="float: left; margin-left: 10%; margin-top: 3%;background-color: #454545; padding: 5%; padding-top: 2%;">
+		  <td><h1>Book Now!</h1></td>
+          <tr>
+            <td><label for="firstName">First Name*</label></td>
+            <td><input type="text" name="firstName" id="fnBox" required/></td>
+         </tr>
+          <tr>
+            <td><label for="lastName">Last Name*</label></td>
+            <td><input type="text" name="lastName" id="lnBox" required /></td>
+         </tr>
+         <tr>
+            <td><label for="email">E-mail*</label></td>
+            <td><input type="email" name="email" id="mailBox" required /></td>
+         </tr>
+         <tr>
+            <td><label for="phoneNumber">Phone Number*</label></td>
+            <td><input type="tel" name="phoneNumber" id="phoneBox" placeholder="(nnn) nnn-nnnn" required /></td>
+         </tr>
+         <tr>
+            <td><label for="guestNumber">Number of Guests*</label></td>
+            <td><input type="number" name="guestNumber" id="gNumberBox" value="0" required /></td>
+         </tr>
+         <tr>
+            <td><label for="arriveDnT"><br>Arrival Date and Time</label></td>
+            <td><input type="datetime-local" name="arrival" id="arrivalBox" required /></td>
+         </tr>
+         <tr>
+            <td><label for="departureD"><br>Departure Date</label></td>
+            <td><input type="date" name="departure" id="departureBox" required/></td>
+         </tr>
+         <tr>
+            <td><label for="roomType">Room Type</label></td>
+            <td>
+               <select name="rooms" id="roomList" required="">
+               <option value="please_select">Please Select</option>
+               <option value="standard">Standard Room(1 to 2 People)</option>
+               <option value="family">Family Room(1 to 4 People)</option>
+               <option value="private">Private Room(1 to 3 People)</option>
+               <option value="mixed">Mix Dorm People(6 People)</option>
+            </select></td>
+         </tr>
+         <tr>
+          <td><br><br><input type="submit" name="submit" value="Submit"/></td>
+       </tr>
+       <table style="width: 35%;float: right; margin-left: auto; margin-right: auto; padding: 0%; padding-top: -2%; position: relative; border: 3px solid #B8860B; margin-right: 10%; margin-top: 3%;">
+			<tr>
+			<td style="padding: 2%; width: 100%;">
+				<div id="social_wrapper">
+					<div id="hover_social"><img src="reserve2.jpg" style="width: 100%; height: 205px;"></div>
+				</div>
+			</td>
+			</tr>
+		<tr>
+			<td style="padding: 2%; width: 100%;">
+				<div id="pool_wrapper">
+					<div id="hover_pool"><img src="reserve3.jpg" style="width: 100%; height: 205px;"></div>
+			</td>
+		</tr>
+
+		<tr>
+			<td style="padding: 2%; width: 100%;">
+				<div id="bedroom_wrapper">
+				<div id="hover_bedroom"><img src="reserve4.jpg" style="width: 100%;height: 205px;"></div>
+			</div>
+			</td>
+		</tr>
+		</table>
+      
+         </table>
+      
+	</section>
+		 	<div id="contacts" style="background-color: gray; height: 250px;">
+		<table style="width: 60%; margin-right: auto;margin-left: auto;padding: 1%;  color: white; overflow: hidden;">
+			<tr>
+				<td style="width: 40%; line-height: 0.5;"><h1>Phone Support</h1><h4>24 HOURS A DAY</h4><br><h1>+ 63 926 940 6316</h1></td>
+				<td style="width: 33.33%; line-height: 0.5;"><h1><br><br>Follow Us</h1><h4>SOCIAL MEDIA CHANNELS</h4><br><img src="soc_med.png" style="height: 100px; width: 50%; margin-top: 0%;"></td>
+				<td style="width: 33.33%; line-height: 0.5;"><h1>Our Newsletter</h1><h4>SIGN UP FOR SPECIAL OFFERS</h4><br>
+					<table style="content: none; background: none; width: 105%; height: 50px; ">
+		<td><font color="gray"><input type="hidden"><input type="email" placeholder="Enter your email address"></font><td><button onclick="alert('Congratulations! You just subscribed!')">SUBSCRIBE</button></font></td>
+	</table>
+			</tr>
+		</table>
+	</div>
+	<footer style="background-color: #302F2F; height: 100px; color: white; padding: 2%; ">
+		<center>
+		<h2>LEGACY AND NIRVANA HOTEL</h2>
+		<h3>© Copyright 2020 WEBTECH - All Rights Reserved<h3>
+		
+	</footer>
+	</section>

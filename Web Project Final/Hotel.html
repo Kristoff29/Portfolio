@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Midterm Hotel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type ="text/css">
+	body {
+		margin-top: -1%;
+		margin-right: -1%;
+		margin-left: -1%;
+		background-color: none;
+	}
+
+	#location_section {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 70vh;
+		background-image: url(city1.jpg);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-attachment: fixed;
+	}
+
+	#location {
+		text-align: center;
+		
+	}
+
+	#location h1 {
+		font-size: 70px;
+		margin-bottom: 20px;
+	}
+
+	#location p {
+		font-size: 25px;
+		line-height: 1.6;
+		margin: 20px;
+	}
+
+	@media (max-width: 768px) {
+		h1 {
+			font-size: 40px;
+		}
+
+		p {
+			font-size: 18px;
+		}
+	}
+
+	#title {
+		position: absolute;
+		top: 28%;
+		left: 50%;
+		right: 50%;
+		transform: translate(-50%,-50%);
+		color: white;
+		font-size: 200%;
+		font-family: Garamond;
+		width: 80%;
+		text-align: center;
+	}
+
+	#title h2 {
+		background-color: rgba(0, 0, 0, 0.6);
+		align-items: center;
+		height: 150px;
+		width: 100%;
+	}
+
+	#title p {
+		font-size: 100%;
+		background-color: rgba(0, 0, 0, 0.6);
+		align-items: center;
+	}
+
+	#second_tagline {
+		position: absolute;
+		text-align: center;
+		color: black;
+		font-size: 100%;
+		font-family: Optima;
+		width: 100%;
+		margin-top: 3%;
+	}
+
+	header {
+		background-image: url(wallpaper2.png);
+		height: 800px;
+		width: 100%;
+		background-size: 100% 100%;
+		background-attachment: initial;
+		padding: 0;
+	}
+
+	nav {
+		background-color: #302F2F;
+		height: 100%;
+		width: 100%;
+		background-size: 100% 100%;
+		background-attachment: scroll;
+		padding: 0;
+		position: sticky;
+		top: 0;
+		text-align: center;
+		box-shadow: -2px 15px 69px 0px rgba(163,163,163,1);
+		z-index: 100000000;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	nav a {
+		margin: 5px;
+	}
+
+	@media (max-width: 768px) {
+		nav {
+			height: auto;
+			flex-direction: column;
+			align-items: stretch;
+			padding: 10px;
+			position: static;
+		}
+
+		nav a {
+			margin: 5px 0;
+		}
+
+		#logo {
+			margin: 5px 0;
+		}
+
+		#logo img {
+			height: 80px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		nav {
+			height: auto;
+			padding: 10px;
+		}
+
+		nav a {
+			margin: 5px 0;
+		}
+
+		#logo {
+			margin: 5px 0;
+		}
+
+		#logo img {
+			height: 60px;
+		}
+	}
+
+	#logo {
+		margin: 10px;
+	}
+
+	#logo img {
+		height: 100px;
+	}
+
+
+	@media (max-width: 768px) {
+		#title {
+			font-size: 150%;
+		}
+
+		#title h2 {
+			height: 100px;
+		}
+
+		#title p {
+			font-size: 80%;
+		}
+
+		#second_tagline {
+			font-size: 80%;
+		}
+
+		nav a {
+			margin: 5px;
+		}
+
+		#logo {
+			margin: 5px;
+		}
+
+		#logo img {
+			height: 80px;
+		}
+	}
+
+	#location {
+		position: absolute;
+		text-align: center;
+		color: white;
+		font-size: 100%;
+		font-family: Optima;
+		width: 50%;
+		margin: 5%;
+	}
+	
+	ul {
+				list-style-type: none;
+				display: inline-block;
+				vertical-align: top;
+				margin-top: -0.3%;
+				background-color: transparent;
+				transition: 0.6s ease;
+				width: 100%;
+			}
+	hr {
+		background-color:  #B8860B;
+		width: 15%;
+	}
+			ul li {
+				display: inline-block;
+				margin-top: -5%;
+			}
+			ul li a{
+				color: gray;
+			}
+			a {
+				text-decoration: none;
+				color: white;
+				padding: 10px 50px;
+				transition: 0.6s ease;
+				font-size: 125%;
+			}
+			a:hover{
+				background-color: gray;
+				color: black;
+			}
+
+			#two_options ul li a:hover{
+				background-color: #696969;
+				color: white;
+			}
+	}
+	#one_option ul li a {
+		color: #B8860B;
+	}
+	#one_option ul li a:hover{
+		background-color: white;
+		color: gray;
+	}
+	input[type=email], select{
+			border: 0px;
+			width: 100%;
+			height: 36px;
+			outline: none;
+			font-size: 15px;
+			}
+	button{
+				border: 0px;
+				background: #F6A600;
+				color: white;
+				width: 100%;
+				cursor: pointer;
+				height:39px;
+				outline: none;	
+				transition: 1s ease;
+			}
+			button:hover{
+				background-color: black;
+				color: white;
+				border: 0px;
+				border-radius: 4px;
+			}
+	#social_wrapper {
+		overflow: hidden;
+	}
+	#pool_wrapper {
+		overflow: hidden;
+	}
+	#bedroom_wrapper{
+		overflow: hidden;
+	}
+	#food_wrapper{
+		overflow:hidden;
+	}
+	#center_wrapper{
+		overflow: hidden;
+	}
+	#theme_wrapper{
+		overflow: hidden;
+	}
+	#hover_social {
+		transition: 1s ease;
+	}
+	#hover_social:hover{
+		transform: scale(1.2);
+	}
+	#hover_pool{
+		transition: 1s ease;
+	}
+	#hover_pool:hover{
+		transform: scale(1.2);
+	}
+	#hover_bedroom{
+		transition: 1s ease;
+	}
+	#hover_bedroom:hover{
+		transform: scale(1.2);
+	}
+	#hover_theme{
+		transition: 1s ease;
+	}
+	#hover_theme:hover{
+		transform: scale(1.2)
+	}
+	#hover_food{
+		transition: 1s ease;
+	}
+	#hover_food:hover{
+		transform: scale(1.2)
+	}
+	#hover_center{
+		transition: 1s ease;
+	}
+	#hover_center:hover{
+		transform: scale(1.2);
+	}
+	@media only screen and (max-width: 768px) {
+		/* Adjustments for tablets and mobile devices */
+
+		#title {
+			top: 20%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		#title h2,
+		#title p {
+			width: 80%;
+		}
+
+		#second_tagline,
+		#location {
+			width: 80%;
+		}
+
+		ul {
+			width: 90%;
+		}
+
+		hr {
+			width: 20%;
+		}
+
+		a {
+			padding: 10px 20px;
+			font-size: 100%;
+		}
+	}
+
+	@media only screen and (max-width: 480px) {
+		/* Adjustments for smaller mobile devices */
+
+		#title {
+			top: 10%;
+			font-size: 150%;
+		}
+
+		#title h2,
+		#title p {
+			width: 100%;
+		}
+
+		#second_tagline,
+		#location {
+			width: 100%;
+		}
+
+		hr {
+			width: 30%;
+		}
+
+		a {
+			padding: 10px 15px;
+			font-size: 90%;
+		}
+
+		header {
+		height: 800px;
+		width: 100%;
+		background-size: 100% 100%;
+		background-attachment: initial;
+		padding: 0;
+	}
+
+	#title {
+		margin: auto;
+		width: 90%;
+		max-width: 1200px;
+		text-align: center;
+	}
+
+	#title h2 {
+		margin-top: 60px;
+		font-size: 40px;
+	}
+
+	#title p {
+		height: 50px;
+		width: 100%;
+		padding: 10px;
+		font-size: 20px;
+	}
+
+	@media (max-width: 768px) {
+		#title h2 {
+			font-size: 30px;
+		}
+
+		#title p {
+			font-size: 16px;
+		}
+	}
+	}
+
+	section {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+	}
+	
+	#location {
+		text-align: center;
+	}
+
+	@media (max-width: 768px) {
+		#location {
+			width: 90%;
+			margin: 0 auto;
+		}
+
+		h1 {
+			font-size: 6vw;
+		}
+
+		p {
+			font-size: 3vw;
+		}
+	}
+
+	@media (max-width: 767px) {
+        #container_history {
+            flex-direction: column;
+        }
+
+        section,
+        div {
+            width: 100%;
+            margin: 0;
+            margin-top: 10%;
+            background-size: 100% 100%;
+        }
+
+        #history {
+            margin-top: 0;
+            padding: 5%;
+        }
+
+        p {
+            font-size: 100%;
+            padding: 10px 0;
+        }
+    }
+
+
+</style>
+</head>
+<body>
+	<header>
+		<div id="title">
+			<h2><br>Nirvana and Legacy Hotel</h2>
+			<center><p style="height: 50px; width: 100%; font-size: 27px;">DELVE INTO AN EXQUISITE EXPERIENCE</p></center>
+		</div>
+	</header>
+	<nav>
+		<a href="Hotel.html">Home</a>
+		<a href="Specials.html">Gallery&nbsp;</a>
+		<a href="Services.html">Hotel Services</a>
+		<div id="logo"><img src="nirvana_final.png" style="height: 100px;"></div>
+		<a href="Meetings.html">Meetings & Events</a>
+		<a href="Toggles.html">FAQS</a>
+		<a href="About_Us.html">About Us</a>
+	</nav>
+	<div id="third_background">
+	<div id="second_tagline">
+		<h1 style="margin-bottom: 1%;">Discover your Nirvana</h1>
+		<hr size="4" />
+	</div>
+</div>
+<div id="table_">
+	<table style="width: 100%; margin-left: auto; margin-right: auto; margin-top: 10%; margin-bottom: 8%;">
+		<tr>
+			<td style="width: 45%;">
+				<img src="hall1.jpg" style="width: 70%; padding-left: 30%;">
+			</td>
+			<td style="width: 55%; font-size: 140%; padding-right: 10%;">
+				<p style="max-width: 100%; line-height: 1.6; padding: 1%; margin: 5%; position: relative; text-align: justify; color: black; border-spacing: 10px;">
+					In the midst of California’s breathtaking natural beauty and moments from San Diego’s world-renowned beaches, there exists a hotel that features a state-of-the-art complex, with countless attractions and services. It is unparalleled amidst San Diego and Southern California hotels. There is no more ideal destination for both leisure and corporate travel than right here.
+				</p>
+			</td>
+		</tr>
+	</table>
+</div>
+
+	
+
+</div>
+<section id="location_section">
+	<div id="location">
+		<h1>Location</h1>
+		<hr style="background-color: white;" size="4" />
+		<p>San Diego, the land of surf and sun, is highly prominent from its tourist and conference destination, making names on its highly regarded activities, shopping and gourmet cuisines. Be amused by the city's laidback attitude and multitudes of hiking trails, gorgeous beaches and booming culinary and beer scene, inspiring people from all over the world to pack up their belongings and head here.<br><br>
+			875 Hotel Circle South<br>
+			San Diego, CA 92108
+		</p>
+	</div>
+</section>
+
+
+
+	<div id="third_background" style="background-color: white;height: 2850px; margin-top: 0%; ">
+		<div id="second_tagline" style="position: relative; padding-top: -5%;">
+			<center>
+		<h1>Hotel Luxury</h1>
+		<hr size="3" / style="background-color: #B8860B; width: 30%;">
+		</div>
+		<br><br><br><br><br><br><br><br>
+		<div id="table_" sty>
+		<table style="width: 90%; margin-left: auto; margin-right: auto; padding: -5%; padding-top: -2%; position: relative; border: 3px solid #B8860B">
+			<tr style="border: 1px solid #B8860B">
+			<td rowspan="2" style="padding: 0.5%;width: 35%; border: 2px solid gray">
+				<div id="social_wrapper">
+					<div id="hover_social"><img src="dining1.jpg" style="width: 100%; height: 900px;"></div>
+				</div>
+			</td>
+			<td colspan="2" style="font-size: 150%; padding: 0.5%; border: 2px solid gray">
+				<div id="pool_wrapper">
+					<div id="hover_pool"><img src="pool1.jpg" style="width: 100%; height: 475px;"></div>
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="2" style="font-size: 150%; padding: 0.5%; border: 2px solid gray">
+				<div id="bedroom_wrapper">
+				<div id="hover_bedroom"><img src="wallpaper1.jpg" style="width: 100%;height: 400px;"></div>
+				</div>
+			</td>
+		</tr>
+		</table>
+		</div>
+
+		<div id="highlights" style="margin-bottom:5%;">
+			<table style="width: 90%; margin-left: auto; margin-right: auto;margin-top: 3%; margin-bottom: 10%; padding: 1%; padding-left: 0%;  position: relative; border: 2px solid #B8860B">
+			<tr>
+			<td style="width: 50%; margin-bottom: -5%;"><div id="theme_wrapper"><div id="hover_theme"><img src="hall1.jpg" style="width: 70%; padding-left: 10%; display: block;"></div></div></td>
+			<td style="width: 50%; font-size: 140%; padding-right: 10%; padding-top: 0%;"><p style="max-width: 100%;
+  			padding: 1%;
+  			margin: 5%;
+  			position: relative;
+  			text-align: justify;
+  			color: black;
+  			border-spacing: 10px;"><h1>Classical Theme</h1><hr/ color="#B8860B" style="width: 50%; float: left"><br><p style="line-height: 1.6">Groove within the exceptional ongoing theme of Nirvana & Legacy Hotel. Widely recognized from its classic black atmosphere, the hotel inspires elegancy and sophistication that relax every bit of being. Combined with its luxurious motif and arrangement, anyone will be left in awe and seduced.</p><br><br><br><br><br><br><br><br>
+		<tr>
+			<td style="width: 50%; font-size: 140%; padding-left: 10%;"><p style="max-width: 100%;
+  			padding: 1%;
+  			margin: 5%;
+  			position: relative;
+  			text-align: justify;
+  			color: black;
+  			border-spacing: 10px;"><h1>Food and Beverage</h1><hr/ color="#B8860B" style="width: 60%; float: left;"><br><p style="line-height: 1.6">Aside from its exemplary ongoing theme, Nirvana and Legacy hotel is also notable from serving relishing gourmet cuisines. With its nurturing culture on the culinary, the hotel has gathered itself well-experienced chefs across the globe, with varying expertise. Experience different cuisines from different places, all catered in this one place.  We prioritize the delight of your palate , all the while providing your proper nourishment.<br><br>  </p></td>
+  			<td style="width: 50%;"><div id="food_wrapper"><div id="hover_food"><img src="food.jpg" style="width: 70%; padding-left: 17%; display: block; padding-right:10%;"></div></div></td>
+		</tr>
+		<tr>
+			<td style="width: 50%;"><div id="center_wrapper"><div id="hover_center"><img src="hotel_night1.jpg" style="width: 70%; padding-left: 10%; display: block;"></div></div></td>
+			<td style="width: 50%; font-size: 140%; padding-right: 10%;"><p style="max-width: 100%;
+  			padding: 1%;
+  			margin: 5%;
+  			position: relative;
+  			text-align: justify;
+  			color: black;
+  			border-spacing: 10px;"><h1>Center Attractions</h1><hr/ color="#B8860B" style="width: 58%; float: left;"><br><p style="line-height: 1.6">Notwithstanding the relished palate and relaxed soul, celebrate and make a merry with Nirvana & Legacy Hotel's central attractions. Fall into enticement by different spots, and whereabouts that bring about adoration and enjoyment. From recreational rooms, to fancy swimming pools, give yourself a one hell of a ride.</p></td>
+		</tr>
+		</table>
+	</div>
+	</center>
+		</div>
+		<div id="container_history">
+			<section style="background-image: url(vintage.jpg); background-size: 100% 100%; height: 750px; width: 50%; background-attachment: fixed; padding-bottom: -5; margin-top: 10%; background-position: left;"></section>
+			<div style="background-image: url(black1.jpg); background-size: 50% 100%; height: 750px; width: 50%; margin-left: 50%; margin-top: -31%; ">
+				<div id="history" style="background-color: none; height: 800px; width: 100%; color: white; padding: 5%;">
+					<br><br>
+					<p style="font-size: 350%; line-height: 0">Discover Our</p>
+					<p style="font-size: 350%; color: #B8860B;">HISTORY</p>
+					<p style="font-size: 150%; padding: 20%; padding-top: 3%; padding-left: 0%; padding-bottom: 3%; margin-bottom: 5%;">It all started in 2010 when Nirvana & Legacy Hotel was established by Russell Roosevelt, situated in San Diego. The hotel officially unlocked its doors on October 20, 2010, and was regarded as the "Luxurious Hotel of the Southern Coast." During its early years, it already gained its well-deserved popularity. This sudden success brought success to the franchise, which resulted in gaining the attention of the hospitality industry. <br><br> Up to this day, the company is continuously growing, inspiring life's most meaningful journeys in the most beautiful destinations across the globe.<br><br>
+						875 Hotel Circle South<br>
+						San Diego, CA 92108
+					</p>
+				</div>
+			</div>
+		</div>
+		
+	<div id="video_tour" style="position: relative; padding-top: -5%; background-color: white;color: black; border: 1px solid #B8860B; background-image: url(design4.jpg)">
+			<center>
+				<br>
+		<h1 style="color:#B8860B; ">Video Tour</h1>
+		<hr size="3" / style="background-color: #696969; width: 20%;">
+		<br>
+	<div id="actual_vid" style="width: 100%;background-color: white;">
+		<video controls autoplay="autoplay" style="height: 500px; width: 50%; margin-left:auto; margin-right: auto; margin-bottom: 5%; border: 2px solid #B8860B; ">
+			<source src="Cinematic Hotels Promo Reel.mp4" type="video/mp4">
+		</video>
+	</div>
+</div>
+	<section style="background-image: url(vintage2.jpg); height: 900px; width: 100%;background-size: 100% 100%; background-attachment: fixed; padding-bottom: -5%;">
+		<div id="location">
+			<center>
+		<h1 style="font-size: 250%; margin-top: -4%;">WHAT OUR FANTASTIC CLIENTS SAY</h1>
+		<hr style="background-color: white;" size="4"/><br><br>
+		<table style="width: 100%; margin-bottom: 2%; padding: 1%; background-color: gray; border: 2px solid white">
+			<tr>
+				<td style="width: 20%;"><img src="Jane.jpg" style="height: 150px; width: 100%; border-radius: 50%;"></td>
+				<td style="width: 80%; padding-left: 4%;"><p style="font-size: 130%; line-height: 1.6">"They serve very nice breakfast and the location of the hotel is very good. No complaint from my one night stay with them. I had made use of their paid sauna service before I caught overnight bus to Rovaniemi and that was nice. Thank you for the great services and facilities provided. I am very satisfied."<br><br> Ivy<br><b>Traveler</b></p></td>
+			</tr>
+		</table>
+		<table style="width: 100%; border: 2px solid white; margin-bottom: 2%; padding: 0%; background-color: gray;">
+			<tr>
+				<td style="width: 80%; padding-right: 5%; padd"><p style="font-size: 130%; line-height: 1.6; text-align: right;">"A nice cosy hotel which was located in the city center. A very convenient location because all the attractions were at a walking distance. Very budget friendly hotel with decent rooms and a good breakfast spread. The staff were very nice and friendly. Enjoyed staying there.<br><br> Amanda<br><b>Traveler</b></p></td>
+				<td style="width: 20%;"><img src="Amanda.jpg" style="height: 150px; width: 100%; border-radius: 50%;"></td>
+			</tr>
+		</table>
+	</center>
+	</section>
+	<div id="contacts" style="background-color: gray; height: 250px;">
+		<table style="width: 60%; margin-right: auto;margin-left: auto;padding: 1%;  color: white; overflow: hidden;">
+			<tr>
+				<td style="width: 40%; line-height: 0.5;"><h1>Phone Support</h1><h4>24 HOURS A DAY</h4><br><h1>+ 63 926 940 6316</h1></td>
+				<td style="width: 33.33%; line-height: 0.5;"><h1><br><br>Follow Us</h1><h4>SOCIAL MEDIA CHANNELS</h4><br><img src="soc_med.png" style="height: 100px; width: 50%; margin-top: -5%;"></td>
+				<td style="width: 33.33%; line-height: 0.5;"><h1>Our Newsletter</h1><h4>SIGN UP FOR SPECIAL OFFERS</h4><br>
+					<table style="content: none; background: none; width: 105%; height: 50px; ">
+		<td><font color="gray"><input type="hidden"><input type="email" placeholder="Enter your email address"></font><td><button onclick="alert('Congratulations! You just subscribed!')">SUBSCRIBE</button></font></td>
+	</table>
+			</tr>
+		</table>
+	</div>
+	<footer style="background-color: #302F2F; height: 100px; color: white; padding: 2%; ">
+		<center>
+		<h2>LEGACY AND NIRVANA HOTEL</h2>
+		<h3>© Copyright 2020 WEBTECH - All Rights Reserved<h3>
+		
+	</footer>
+</body>
+</html>

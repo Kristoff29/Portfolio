@@ -1,0 +1,125 @@
+body {
+    margin-top: -1%;
+    margin-right: -1%;
+    margin-left: -1%;
+    background-color: none;
+}
+#title {
+    position: absolute;
+    color: white;
+    font-size: 250%;
+    font-family:verdana, sans-serif;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+nav {
+    background-color: #3d1016;
+    height: 125px;
+    width: 100%;
+    background-size: 100% 100%; 
+    margin-top: -3%;
+    background-attachment: scroll; 
+    padding: 0; 
+    position: sticky; 
+    top: 0; 
+    text-align: center; 
+    box-shadow: -2px 15px 69px 0px rgba(163,163,163,1); 
+    z-index: 100000000; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+#title h2 {
+    align-items: center;
+}
+#title p {
+    font-size: 95%;
+    background-color: rgb(0,0,0,0.6);
+    align-items: center;
+}
+#founders_day {
+    width: 100%;
+    color: rgb(0, 0, 0);
+    font-size: 100%;
+    background-size: 100% 100%; 
+    font-family: Optima;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+}
+#highlight {
+          background-color: white;
+          opacity: 0.95;
+          margin-top: 0%;
+          margin-bottom: 5%;
+        align-items: center;
+          display: grid;
+          justify-content: center;
+          transition: 0.6s ease;
+        width: 75%;
+        font-size: 158%;
+        line-height: 175%;
+      }
+
+ul {
+            list-style-type: none;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: -0.3%;
+            background-color: transparent;
+            transition: 0.6s ease;
+            width: 100%;
+        }
+hr {
+    background-color:  #5f111b;
+    width: 20%;
+}
+        ul li {
+            display: inline-block;
+            margin-top: -5%;
+        }
+        ul li a{
+            color: gray;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 50px;
+            transition: 0.6s ease;
+            font-size: 125%;
+        }
+        a:hover{
+            background-color: rgb(255, 255, 255);
+            color: black;
+        }
+
+        #two_options ul li a:hover{
+            background-color: #696969;
+            color: white;
+        }
+input[type=email], select{
+        border: 0px;
+        width: 100%;
+        height: 36px;
+        outline: none;
+        font-size: 15px;
+        }
+button{
+            border: 0px;
+            background: #F6A600;
+            color: white;
+            width: 100%;
+            cursor: pointer;
+            height:39px;
+            outline: none;	
+            transition: 1s ease;
+        }
+        button:hover{
+            background-color: black;
+            color: white;
+            border: 0px;
+            border-radius: 4px;
+        }
