@@ -1398,14 +1398,16 @@ form input, form textarea{
   align-items: center;
   text-align: center;
   color: white;
-  margin-bottom: 40px;
   transition: 0.4s ease-in-out;
+  margin-bottom: 40px;
   flex-wrap: wrap; /* Added for vertical alignment */
+  transition: transform 0.4s ease-in-out;
 }
 
 .testimonial-item:hover {
   border: 3px solid var(--hover-color);
   transform: translateY(-10px) scale(1.03);
+  transform: scale(1.03);
 }
 
 .testimonial-item h2 {
@@ -1516,8 +1518,8 @@ form input, form textarea{
   flex-wrap: wrap;
   justify-content: center; /* Center items horizontally */
   align-items: flex-start; /* Align items at the top */
-  padding: 70px;
-  gap: 70px;
+  padding: 40px;
+  gap: 110px;
   max-width: 1200px;
   margin: 0 auto;
 }
