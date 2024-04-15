@@ -1351,6 +1351,7 @@ form input, form textarea{
   background: var(--secon-bg-color);
   border: 3px solid var(--hover-color); /* Add border */
   border-radius: 32px;
+  margin-bottom: 40px;
 }
 
 .testimonials-box {
