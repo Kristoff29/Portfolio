@@ -51,7 +51,15 @@
                 <div class="btn-box">
                   <a href="images/Kristoffer Lacson - Resume.pdf" class="btn" download target="_blank"> Resume</a>
                   <a href="#contact" class="btn">Hire Me Now!</a>
+                  
               </div>
+
+              <br><br>
+              <div class="btn-box">
+                <a href="images/Kris_Letterhead.pdf" class="btn" download target="_blank"> Cover Letter</a>
+                
+            </div>
+            
 
                 <div class="social-icons">
                   <a href="https://www.facebook.com/kristoffer.lacson.7" target="_blank"><i class='bx bxl-facebook-circle' ></i></a>
@@ -82,6 +90,11 @@
 
         </section>
 
+        <!-- Web Banner-->
+
+        <div id="popupBanner" class="popup-banner">
+          <span class="close-btn" onclick="closeBanner()">&times;</span>
+        </div>
 <!-------about---------->
 <div id="about" class="animate" data-aos="fade-up">
     <div class="container">
@@ -445,6 +458,41 @@
       })
       .catch(error => console.error('Error!', error.message))
   })
+
+  let isDragging = false;
+let initialX;
+let initialY;
+
+document.addEventListener("DOMContentLoaded", function() {
+  const banner = document.getElementById("popupBanner");
+  banner.style.display = "block"; // Display the banner initially
+
+  banner.addEventListener("mousedown", startDrag);
+  document.addEventListener("mousemove", drag);
+  document.addEventListener("mouseup", endDrag);
+});
+
+function startDrag(event) {
+  isDragging = true;
+  initialX = event.clientX - parseInt(window.getComputedStyle(document.getElementById("popupBanner")).left);
+  initialY = event.clientY - parseInt(window.getComputedStyle(document.getElementById("popupBanner")).top);
+}
+
+function drag(event) {
+  if (isDragging) {
+    const banner = document.getElementById("popupBanner");
+    banner.style.left = event.clientX - initialX + "px";
+    banner.style.top = event.clientY - initialY + "px";
+  }
+}
+
+function endDrag() {
+  isDragging = false;
+}
+
+function closeBanner() {
+  document.getElementById("popupBanner").style.display = "none";
+}
 </script>
 
 </body>
