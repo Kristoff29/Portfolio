@@ -1582,3 +1582,39 @@ form input, form textarea{
     margin-bottom: 15px; /* Adjust margin for small screens */
   }
 }
+
+/*Web banner*/
+
+.popup-banner {
+  display: none;
+  position: fixed;
+  bottom: 5%; /* Position at the bottom of the screen */
+  left: 50%; /* Position at the horizontal center of the screen */
+  transform: translate(-50%, 0); /* Center horizontally */
+  width: 30%;
+  height: 210px; /* Set the height of the banner */
+  background-image: url('images/port-banner.svg'); /* Replace with your image URL */
+  background-size: cover; /* Cover the entire banner */
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  cursor: move; /* Cursor changes to indicate draggable */
+  z-index: 1000; /* Ensure the banner appears above other content */
+  opacity: 0.9; /* Make the banner slightly transparent */
+}
+
+.popup-banner h2 {
+  margin-top: 0;
+}
+
+.close-btn {
+  color: #fff; /* Close button text color */
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5); /* Close button background color with transparency */
+  padding: 5px 10px; /* Padding for the close button */
+  border-radius: 5px; /* Rounded corners for the close button */
+}
